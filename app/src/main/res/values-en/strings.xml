@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">AppDelivery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Produtos -->
+    <string name="mcNome">Mc Lanche</string>
+    <string name="mcPreco">R$ 4.90</string>
+    <string name="hamburguer">Hamburguer</string>
+    <string name="batata_frita">Batata Frita</string>
+    <string name="balde_frango">Balde Frango</string>
+    <string name="nuggets">Nuggets</string>
+    <string name="ramen">Ramen</string>
+    <string name="sushi">Sushi</string>
+    <string name="onigiri">Onigiri</string>
+
+    <!-- Fragmentos Strings -->
+    <string name="restaurantes">Restaurants</string>
+    <string name="mcdonalds">McDonald\'s</string>
+    <string name="kfc">KFC</string>
+    <string name="sushi_restaurante">Sushi</string>
+    <string name="adicionar_carrinho">Add to Cart</string>
+
+    <!-- Carrinho Strings -->
+    <string name="itens_carrinho">Total Itens In Cart</string>
+    <string name="subtotal">Sub total</string>
+    <string name="taxa_de_entrega">Delivery Charge</string>
+    <string name="total">Total</string>
+    <string name="finalizar_pedido">Place Your Order</string>
+
+
+</resources>
