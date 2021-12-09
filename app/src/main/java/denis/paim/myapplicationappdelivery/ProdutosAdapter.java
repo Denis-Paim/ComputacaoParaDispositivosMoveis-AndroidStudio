@@ -43,11 +43,6 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.Produt
         holder.btnAdicionarCarrinho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ProdutoModel objeto = produtosList.get(holder.getAdapterPosition());
-//                holder.botoesLayout.setVisibility(View.VISIBLE);
-//                holder.adicionarCarrinho.setVisibility(View.GONE);
-//                objeto.setTotalNoCarrinho(1);
-//                holder.contador.setText(String.valueOf(objeto.getTotalNoCarrinho()));
 
                 Intent intent = new Intent(context, CarrinhoActivity.class);
                 intent.putExtra("produto", produtosList.get(holder.getAdapterPosition()).getNome());
@@ -58,35 +53,6 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.Produt
             }
         });
 
-//        holder.buttonMais.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ProdutoModel objeto = produtosList.get(holder.getAdapterPosition());
-//                int total = objeto.getTotalNoCarrinho();
-//                total++;
-//                objeto.setTotalNoCarrinho(total);
-//                holder.contador.setText(String.valueOf(total));
-//
-//            }
-//        });
-
-//        holder.buttonMenos.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ProdutoModel objeto = produtosList.get(holder.getAdapterPosition());
-//                int total = objeto.getTotalNoCarrinho();
-//                total--;
-//                if (total > 0){
-//                    objeto.setTotalNoCarrinho(total);
-//                    holder.contador.setText(String.valueOf(total));
-//                }else{
-//                    holder.botoesLayout.setVisibility(View.GONE);
-//                    holder.adicionarCarrinho.setVisibility(View.VISIBLE);
-//                    objeto.setTotalNoCarrinho(total);
-//
-//                }
-//            }
-//        });
     }
 
 
@@ -96,7 +62,6 @@ public class ProdutosAdapter extends RecyclerView.Adapter<ProdutosAdapter.Produt
         return produtosList.size();
 
     }
-
 
     public class ProdutosViewHolder extends RecyclerView.ViewHolder {
 
