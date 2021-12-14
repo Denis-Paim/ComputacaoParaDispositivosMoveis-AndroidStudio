@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AppDelivery</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Produtos -->
@@ -27,6 +27,22 @@
     <string name="taxa_de_entrega">Taxa de Entrega</string>
     <string name="total">Total</string>
     <string name="finalizar_pedido">Finalizar Pedido</string>
+    <string name="alerta">Você deve preencher todos os campos!</string>
+    <string name="pedido_recebido">Seu pedido foi recebido</string>
+    <string name="retirada">Retirada</string>
+    <string name="entregar">Entregar</string>
+    <string name="avancar">Avançar</string>
+
+    <!-- Dados do Cliente Strings -->
+    <string name="dados_do_cliente">Dados do Cliente</string>
+    <string name="nome">Nome:</string>
+    <string name="endereco">Endereço:</string>
+    <string name="cidade">Cidade:</string>
+    <string name="cep">CEP:</string>
+    <string name="cartao_de_credito">Cartão de Crédito</string>
+    <string name="numero_do_cartao">Número do Cartão</string>
+    <string name="validade_do_cartao">Validade do Cartão</string>
+
 
 
 </resources>

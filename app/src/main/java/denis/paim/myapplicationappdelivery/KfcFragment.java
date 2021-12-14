@@ -42,7 +42,7 @@ public class KfcFragment extends Fragment {
 
     private void setProdutoRecycler(List<ProdutoModel> produtoList) {
 
-        produtoRecycler = view.findViewById(R.id.card_list);
+        produtoRecycler = view.findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
         produtoRecycler.setLayoutManager(layoutManager);
         produtosAdapter = new ProdutosAdapter(getContext(), produtoList);

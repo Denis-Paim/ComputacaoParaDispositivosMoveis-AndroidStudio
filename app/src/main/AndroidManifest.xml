@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplicationAppDelivery">
         <activity
+            android:name=".DadosClientes"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".CarrinhoActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"

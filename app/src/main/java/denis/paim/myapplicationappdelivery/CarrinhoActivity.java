@@ -1,7 +1,9 @@
 package denis.paim.myapplicationappdelivery;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,8 +15,10 @@ public class CarrinhoActivity extends AppCompatActivity {
 
 
     private int contador = 1;
-    private float precoEntrega = 8.0f;
+    private float precoEntrega = 0;
     private float subTotal = 0;
+    private float totalAtualizado = 0;
+    private boolean switchLigado = false;
 
     TextView nome;
     TextView preco;
@@ -22,9 +26,11 @@ public class CarrinhoActivity extends AppCompatActivity {
     TextView subTotalAtualizado;
     TextView total;
     TextView custoEntrega;
+    TextView txtFinalizarPedido;
     ImageView imagem;
     ImageView icMais;
     ImageView icMenos;
+    SwitchCompat switchEntrega;
 
 
     @Override
@@ -41,24 +47,41 @@ public class CarrinhoActivity extends AppCompatActivity {
         subTotalAtualizado = findViewById(R.id.txtSubTotal);
         custoEntrega = findViewById(R.id.txtCustoEntrega);
         total = findViewById(R.id.txtPrecoTotal);
+        txtFinalizarPedido = findViewById(R.id.txtAvancar);
+        switchEntrega = findViewById(R.id.switchEntrega);
 
+        DecimalFormat df = new DecimalFormat("0.00");
 
         Bundle extras = getIntent().getExtras();
 
         float precoFloat = Float.valueOf(extras.getString("preco"));
-        float precoMaisEntrega = precoFloat + precoEntrega;
-
-        DecimalFormat df = new DecimalFormat("0.00");
 
         nome.setText(extras.getString("produto"));
         preco.setText("R$ "+df.format(precoFloat));
         imagem.setImageResource(extras.getInt("imagem", R.drawable.ic_app_logo));
 
         subTotalAtualizado.setText("R$ "+df.format(precoFloat));
-        custoEntrega.setText("R$ "+df.format(precoEntrega));
-        total.setText("R$ "+df.format(precoMaisEntrega));
+        total.setText("R$ "+df.format(precoFloat));
 
         quantidadeCarrinho.setText(String.valueOf(contador));
+
+        switchEntrega.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (switchEntrega.isChecked()){
+                    precoEntrega = 8.0f;
+                    custoEntrega.setText("R$ "+df.format(precoEntrega));
+                    total.setText("R$ "+df.format(calcValorTotal(precoFloat, contador, precoEntrega)));
+                    switchLigado = true;
+                }else{
+                    precoEntrega = 0.0f;
+                    custoEntrega.setText("R$ "+df.format(precoEntrega));
+                    total.setText("R$ "+df.format(calcValorTotal(precoFloat, contador, precoEntrega) - precoEntrega));
+                    switchLigado = false;
+                }
+            }
+        });
 
         icMais.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,9 +102,20 @@ public class CarrinhoActivity extends AppCompatActivity {
                     subTotal = subTotal - precoFloat;
                     quantidadeCarrinho.setText(String.valueOf(contador));
                     subTotalAtualizado.setText("R$ "+df.format(subTotal));
-                    float totalAtualizado = subTotal + precoEntrega;
+                    totalAtualizado = subTotal + precoEntrega;
                     total.setText("R$ "+df.format(totalAtualizado));
                 }
+            }
+        });
+
+        txtFinalizarPedido.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(CarrinhoActivity.this, DadosClientes.class);
+                intent.putExtra("switchLigado", switchLigado);
+                startActivity(intent);
+
             }
         });
     }

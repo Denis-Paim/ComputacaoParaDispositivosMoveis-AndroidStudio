@@ -15,7 +15,7 @@ import java.util.List;
 
 public class McDonaldsFragment extends Fragment{
 
-    RecyclerView produtoRecycler;
+    RecyclerView recyclerView;
     ProdutosAdapter produtosAdapter;
 
     View view;
@@ -37,19 +37,19 @@ public class McDonaldsFragment extends Fragment{
         produtoList.add(new ProdutoModel(R.drawable.ic_milkshake, "Milkshake", 15.90f));
         produtoList.add(new ProdutoModel(R.drawable.ic_sorvete, "Sorvete", 11.90f));
 
-        setProdutoRecycler(produtoList);
+        iniciarProdutoRecycler(produtoList);
 
         return view;
 
     }
 
-    private void setProdutoRecycler(List<ProdutoModel> produtoList) {
+    private void iniciarProdutoRecycler(List<ProdutoModel> produtoList) {
 
-        produtoRecycler = view.findViewById(R.id.card_list);
+        recyclerView = view.findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
-        produtoRecycler.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(layoutManager);
         produtosAdapter = new ProdutosAdapter(getContext(), produtoList);
-        produtoRecycler.setAdapter(produtosAdapter);
+        recyclerView.setAdapter(produtosAdapter);
 
     }
 

@@ -25,7 +25,23 @@
     <string name="subtotal">Sub total</string>
     <string name="taxa_de_entrega">Delivery Charge</string>
     <string name="total">Total</string>
+    <string name="alerta">You must fill in all fields!</string>
+    <string name="pedido_recebido">Your order has been received </string>
+    <string name="retirada">Pickup</string>
+    <string name="entregar">Delivery</string>
+    <string name="avancar">Continue</string>
+
+    <!-- Dados do Cliente Strings -->
+    <string name="dados_do_cliente">Customer Details</string>
+    <string name="nome">Enter your name</string>
+    <string name="endereco">Enter your address</string>
+    <string name="cidade">Enter your city</string>
+    <string name="cep">Enter your zip code</string>
+    <string name="cartao_de_credito">Card Detail</string>
+    <string name="numero_do_cartao">Enter Card Number</string>
+    <string name="validade_do_cartao">Enter Card Pin</string>
     <string name="finalizar_pedido">Place Your Order</string>
+
 
 
 </resources>
