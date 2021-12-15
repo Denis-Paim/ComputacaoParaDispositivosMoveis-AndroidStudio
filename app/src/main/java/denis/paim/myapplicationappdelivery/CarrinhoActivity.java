@@ -54,9 +54,8 @@ public class CarrinhoActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        float precoFloat = Float.valueOf(extras.getString("preco"));
-
         nome.setText(extras.getString("produto"));
+        float precoFloat = Float.valueOf(extras.getString("preco"));
         preco.setText("R$ "+df.format(precoFloat));
         imagem.setImageResource(extras.getInt("imagem", R.drawable.ic_app_logo));
 

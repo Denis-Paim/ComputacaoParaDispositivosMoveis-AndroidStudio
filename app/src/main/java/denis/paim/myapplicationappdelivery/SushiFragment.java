@@ -15,7 +15,7 @@ import java.util.List;
 
 public class SushiFragment extends Fragment {
 
-    RecyclerView produtoRecycler;
+    RecyclerView recyclerView;
     ProdutosAdapter produtosAdapter;
 
     View view;
@@ -35,18 +35,18 @@ public class SushiFragment extends Fragment {
         produtoList.add(new ProdutoModel(R.drawable.ic_onigiri, "Onigiri", 14.90f));
         produtoList.add(new ProdutoModel(R.drawable.ic_temaki, "Temaki", 19.00f));
 
-        setProdutoRecycler(produtoList);
+        iniciarRecyclerView(produtoList);
 
         return view;
     }
 
-    private void setProdutoRecycler(List<ProdutoModel> produtoList) {
+    private void iniciarRecyclerView(List<ProdutoModel> produtoList) {
 
-        produtoRecycler = view.findViewById(R.id.recycler_view);
+        recyclerView = view.findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
-        produtoRecycler.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(layoutManager);
         produtosAdapter = new ProdutosAdapter(getContext(), produtoList);
-        produtoRecycler.setAdapter(produtosAdapter);
+        recyclerView.setAdapter(produtosAdapter);
 
     }
 

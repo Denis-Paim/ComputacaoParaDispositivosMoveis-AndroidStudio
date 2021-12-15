@@ -36,8 +36,8 @@ public class DadosClientes extends AppCompatActivity {
         txtFinalizarPedido = findViewById(R.id.txtFinalizarPedido);
 
 
-        Bundle bundle = getIntent().getExtras();
-        switchLigado = bundle.getBoolean("switchLigado");
+        Bundle extras = getIntent().getExtras();
+        switchLigado = extras.getBoolean("switchLigado");
 
         if (switchLigado){
 

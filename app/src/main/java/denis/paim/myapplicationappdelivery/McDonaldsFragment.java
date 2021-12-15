@@ -37,13 +37,13 @@ public class McDonaldsFragment extends Fragment{
         produtoList.add(new ProdutoModel(R.drawable.ic_milkshake, "Milkshake", 15.90f));
         produtoList.add(new ProdutoModel(R.drawable.ic_sorvete, "Sorvete", 11.90f));
 
-        iniciarProdutoRecycler(produtoList);
+        iniciarRecyclerView(produtoList);
 
         return view;
 
     }
 
-    private void iniciarProdutoRecycler(List<ProdutoModel> produtoList) {
+    private void iniciarRecyclerView(List<ProdutoModel> produtoList) {
 
         recyclerView = view.findViewById(R.id.recycler_view);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false);
